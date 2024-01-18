@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+    <script defer src="../js/group.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <form id="myForm" onsubmit="createGroup(event)" method="POST">
+            <label for="name">Group Name:</label>
+            <input type="text" id="groupName" name="groupName" required>
+
+            
+            <input type="text" id="search" name="search" oninput="filterUsers()" placeholder="Search members">
+
+            <div id="userList">
+                <!-- User list with checkboxes will be displayed here -->
+            </div>
+
+            <input type="submit" value="Create Group" id="signup">
+
+        </form>
+    </div>
+
+</body>
+</html>

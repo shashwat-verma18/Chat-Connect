@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Window</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+    <script src="../js/app.js" defer></script>
+</head>
+<body>
+    
+    <div style="display:flex;">
+    <div style="width:20%; background-color: #8fd692; height: 100rem;">
+        <ul id="nav_grp">
+               
+        </ul>
+
+        
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="modal" id="modal">
+
+        <button id="closeBtn" onclick="closeView()">X</button>
+        <h2 id="grpName" style="margin-bottom: 5px;">Group Name</h2>
+
+        <table id="users">
+            
+        </table>
+
+        
+    </div>
+
+    <div style="width: 100%;">
+        <div>
+            <ul id="nav">
+                <button id="members" class="members" onclick="viewMembers()">View Members</button>
+                <button id="logout" class="logOut" onclick="logOut()">Log Out</button>
+                <p id="appName"></p>
+                
+            </ul>
+        </div>
+        
+        <div class="msg_content">
+
+            <button id="olderMessages" class="oldMsg" onclick="olderMessages()">Load older messages</button>
+            <table id ='msgTable'>
+                
+            </table>
+        </div>
+
+        <div class="footer">
+            <div class="footer_content">
+                <input id="msg" name="msg" type="text" placeholder="Enter your message">
+
+                <input type="file" id="fileInput" style="display: none;" onchange="attach(event)" accept="image/*">
+                <button id="attach" onclick="plus(event)">+</button>
+
+                <button id="send" onclick="send(event)">Send</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

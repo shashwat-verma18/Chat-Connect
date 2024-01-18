@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <form id="myForm" onsubmit="signUp(event)" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <p id="passwordMain" class="error-message"></p>
+
+            <label for="confirmPassword">Re-enter Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <p id="passwordError" class="error-message"></p>
+
+            <p id="password-Req">Password Requirements:</p>
+            <ul>
+                <li>Minimum 8 characters</li>
+                <li>Atleast one uppercase character</li>
+                <li>Atleast one lowercase character</li>
+                <li>At least one special character</li>
+            </ul>
+
+            <input type="submit" value="Sign Up" id="signup">
+
+            <p id="switchP">Already have an account? <a href="login.html" id="switchLink">Log in</a></p>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <form id="myForm" onsubmit="logIn(event)" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email_login" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password_login" name="password" required>
+            <p id="passwordMain" class="error-message"></p>
+
+            <p id="loginMessage" class="error-message"></p>
+
+            <input type="submit" value="Log In" id="signup">`
+
+            <!-- <p id="switchP">or <a href="forgotPassword.html" id="switchLinkPassword">Forgot Password</a></p> -->
+
+            <hr>
+
+            <p id="switchP">Don't have an account? <a href="index.html" id="switchLink">Sign Up</a></p>
+
+        </form>
+    </div>
+</body>
+</html>

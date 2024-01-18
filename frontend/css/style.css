@@ -1,0 +1,386 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#signup {
+    background-color: #4caf50;
+    width: max-content;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#signup:hover{
+    background-color: #45a049;
+}
+
+#switchP{
+    margin-top: 0px;
+    font-size: 13px;
+}
+
+#switchLink {
+    color: #4caf50;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#switchLink:hover{
+    color: #45a049;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+
+#password-Req{
+    text-align: start;
+    margin-bottom: -10px;
+}
+
+li {
+    text-align: start;
+    font-size: 14px;
+    color: #666666;
+
+}
+
+/* .dashboard-container {
+    
+} */
+
+#nav_grp{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#grp_li{
+    padding: 17px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    border-bottom: #4242427f;
+    border-bottom-style: solid;
+    border-width: 1px;
+
+}
+
+#grp_li:hover{
+    background-color: #45a049;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#nav{
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4caf4fc0;
+}
+
+.logOut{
+    background-color: #4caf50;
+    cursor: pointer;
+    width: max-content;
+    color: white;
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right
+}
+
+.logOut:hover {
+    background-color: #45a049;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.members{
+    background-color: #4caf50;
+    cursor: pointer;
+    width: max-content;
+    color: white;
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left
+}
+
+.members:hover {
+    background-color: #45a049;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#switchLinkPassword{
+    color: #5b4caf;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#switchLinkPassword:hover{
+    color: #534893;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.msg_content{
+    width: 60%;
+    font-family: cursive;
+    margin: 20px auto;
+    margin-bottom: 85px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+table, th, td {
+    border-collapse: collapse;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    
+  }
+  
+  
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dadada85;
+  }
+
+
+#appName{
+    float: center; 
+    margin-top: 16px; 
+    font-weight: 500; 
+    font-size: 18px;
+    font-family: Georgia, serif;
+}
+
+.footer {
+    position: fixed;
+    width: 85%;
+    bottom: 0;
+    background-color: rgb(37, 77, 104);
+    color: white;
+    text-align: center;
+}
+
+.footer_content{
+   padding: 10px; 
+   display: flex;
+}
+
+#msg{
+    width: 50%;
+    text-align: center;
+    padding: 10px 15px;
+    color: #4f4f4f;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    margin-left:auto;
+    text-align: left;
+    font-family: cursive;
+}
+
+#send{
+    display: inline-block;
+    background-color: rgb(0, 113, 189);
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.oldMsg{
+    background-color: #424242;
+    cursor: pointer;
+    width: max-content;
+    color: white;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* group  */
+
+#userList {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.con{
+    display : 'flex';
+}
+
+/* view member  */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.725);
+    z-index: 999;
+}
+
+#closeBtn{
+    background-color: #9b0000;
+    cursor: pointer;
+    width: max-content;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right
+}
+
+#userName{
+    margin: 13px 0px;
+    padding-left: 20px;
+    /* width: 90%; */
+    font-size: 16px;
+    color: #424242;
+}
+#isAdmin{
+    margin: 13px 0px;
+    /* padding-left: 40px; */
+    /* width: 30%; */
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+#makeAdmin{
+    /* display: none; */
+    background-color: #4caf50;
+    cursor: pointer;
+    /* width: max-content; */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+}
+
+#makeAdmin:hover {
+    background-color: #45a049;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#removeUser{
+    background-color: #c90606;
+    cursor: pointer;
+    /* width: max-content; */
+    color: white;
+    /* margin: 5px; */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right
+}
+
+#removeUser:hover {
+    background-color: #9b0000;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#attach{
+    border-radius: 50%;
+    font-size: 25px;
+    padding: 6px;
+    margin: 8px;
+    margin-right: 0px;
+}
