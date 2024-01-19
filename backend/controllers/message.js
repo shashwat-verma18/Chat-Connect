@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const Message = require('../models/messageModel.js');
 const User = require('../models/userModel.js');
 const AWS = require('aws-sdk');
+const ArchivedMessage = require('../models/archivedMessage.js');
 
 exports.sendMsg = async (req, res) => {
 
@@ -52,6 +53,25 @@ exports.getMsg = async (req, res) => {
             limit:10
         });
 
+        if(respond.length===0){
+            const response = await ArchivedMessage.findAll({
+                where : {id : {
+                    [Sequelize.Op.gt] : lastId
+                },
+                    groupId: grpId,
+                },
+                attributes: ['id','message'],
+                include: [{
+                    model: User,
+                    attributes: ['name']
+                }],
+                order: [['createdAt','DESC']],
+                limit:10
+            });
+
+            res.status(200).json(response);
+        }
+
         res.status(200).json(respond);
         
     }catch(err){
@@ -79,8 +99,21 @@ exports.getAllMsg = async (req, res) => {
             }],
         });
 
+        const respond2 = await ArchivedMessage.findAll({
+            where: {
+                groupId: grpId,
+            },
+            attributes: ['id','message'],
+            include: [{
+                model: User,
+                attributes: ['name']
+            }],
+        });
 
-        res.status(200).json(respond);
+        
+
+
+        res.status(200).json({res1 : respond, res2: respond2});
         
     }catch(err){
         console.log('getMsg : '+err);
@@ -120,12 +153,6 @@ exports.sendFile = async(req, res) => {
         }
 
         res.status(200).json(response);
-
-        
-
-        // const fileURL = await uploadToS3(file);
-
-        // res.status(200).json({fileURL, success:true});
 
     }catch(err){
         console.log(err);

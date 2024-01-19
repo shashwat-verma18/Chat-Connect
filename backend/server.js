@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const socketIO = require('socket.io');
+const cron = require('./cron/cron');
 
 const bodyParser = require('body-parser');
 
@@ -48,6 +49,7 @@ const User = require('./models/userModel');
 const Message = require('./models/messageModel');
 const Group = require('./models/groupModel');
 const UserGroup = require('./models/userGroupModel');
+const ArchivedMessage = require('./models/archivedMessage');
 
 const userRoute = require('./routes/userRoutes');
 const msgRoute = require('./routes/messageRoute');
@@ -60,6 +62,8 @@ app.use(bodyParser.json({ extended: false }));
 User.hasMany(Message);
 Message.belongsTo(User, { constraints: true, onDelete: 'CASCADE', foreignKey: 'userId' });
 
+ArchivedMessage.belongsTo(User, { constraints: true, onDelete: 'CASCADE', foreignKey: 'userId' });
+
 User.belongsToMany(Group, { through: UserGroup });
 Group.belongsToMany(User, { through: UserGroup });
 
@@ -69,13 +73,17 @@ Group.belongsTo(UserGroup, { foreignKey: 'groupId'});
 Group.hasMany(Message);
 Message.belongsTo(Group);
 
+Group.hasMany(ArchivedMessage);
+ArchivedMessage.belongsTo(Group);
+
 app.use('/users', userRoute);
 app.use('/message', msgRoute);
 app.use('/group', groupRoute);
 
 sequelize
-.sync()
+.sync({})
 .then(result => {
+    cron();
     server.listen(3000);
 })
 .catch(err => console.log(err));

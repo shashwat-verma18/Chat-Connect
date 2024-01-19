@@ -122,7 +122,7 @@ function displayRecentMessages() {
     axios.get(`${url}/message/getMsg?id=${id}&grpId=${grpId}`, { headers: { "Authorization": token } })
         .then((respond) => {
 
-
+            console.log(respond.data.length===0);
             let newMsg = [];
 
             for (let i = respond.data.length - 1; i >= 0; i--) {
@@ -168,16 +168,26 @@ function olderMessages() {
     axios.get(`${url}/message/oldMsg?grpId=${grpId}`, { headers: { "Authorization": token } })
         .then((respond) => {
 
-            clearInterval(timer);
+            const res1 = respond.data.res1;
+            const res2 = respond.data.res2;
 
             document.getElementById('olderMessages').style.display = 'none';
 
             document.getElementById('msgTable').innerHTML = '';
 
-            for (let i = 0; i < respond.data.length; i++) {
+            for (let i = 0; i < res1.length; i++) {
                 let obj = {
-                    message: respond.data[i].message,
-                    name: respond.data[i].user.name
+                    message: res1[i].message,
+                    name: res1[i].user.name
+                }
+
+                showMessage(obj);
+            }
+
+            for (let i = 0; i < res2.length; i++) {
+                let obj = {
+                    message: res2[i].message,
+                    name: res2[i].user.name
                 }
 
                 showMessage(obj);
@@ -200,6 +210,10 @@ function showMessage(obj) {
 
     var tr = document.createElement('tr');
     var td = document.createElement('td');
+
+    // if(name=='You'){
+    //     td.style.textAlign = 'right';
+    // }
 
     if(msg.includes('https://group-chat-18')){
         var div1 = document.createElement('div');
